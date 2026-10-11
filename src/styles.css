@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0c0a;
+  --color-surface: #141612;
+  --color-raised: #1c1f1a;
+  --color-inset: #0e100e;
+  --color-fg: #ecebe4;
+  --color-muted: #8e9288;
+  --color-subtle: #6a6e66;
+  --color-primary: #c5d0c2;
+  --color-primary-fg: #121410;
+  --color-accent: #8aa38a;
+  --color-border: #2a2d28;
+  --color-danger: #c47a6a;
+  --color-warn: #c4b08a;
+  --color-ok: #8aa38a;
+  --color-wa: #7d9b7a;
+  --color-msgr: #7a8fa3;
+  --color-ig: #a38a8a;
+  --color-ava-1: #3a4238;
+  --color-ava-2: #2e3438;
+  --color-ava-3: #3c3834;
+  --color-ava-4: #34382e;
+  --font-sans: "Figtree", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", "Noto Serif Bengali", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --text-2xs: 0.6875rem;
+  --tracking-mark: 0.18em;
+  --spacing-phone: 21.25rem;
+  --spacing-stage: 34rem;
+  --spacing-mobile-stage: 55vh;
+  --shadow-border: 0 0 0 1px rgba(236, 235, 228, 0.08);
+  --shadow-lift: 0 18px 40px -24px rgba(0, 0, 0, 0.7);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .tracking-mark {
+    letter-spacing: var(--tracking-mark);
+  }
+
+  .grain {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05  0 0 0 0 0.06  0 0 0 0 0.04  0 0 0 0.28 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
